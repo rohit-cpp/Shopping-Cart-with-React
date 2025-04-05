@@ -34,3 +34,5 @@ const ShoppingCartProvider = ({ children }) => {
 };
 
 export default ShoppingCartProvider;
+
+import React from "react";
