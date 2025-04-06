@@ -6,15 +6,16 @@ import React from "react";
 
 const ShoppingCartProvider = ({ children }) => {
   const [listOfProducts, setListOfProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   async function handelCartApi() {
     try {
-      const response = await fetch("https://dummyjson.com/carts");
+      const response = await fetch("https://dummyjson.com/products");
       const result = await response.json();
 
-      if (result && result?.carts) {
-        setListOfProducts(result?.carts);
+      if (result && result?.products) {
+        setListOfProducts(result?.products);
+        setLoading(false);
       } else {
       }
     } catch (error) {
@@ -26,7 +27,7 @@ const ShoppingCartProvider = ({ children }) => {
   }, []);
 
   return (
-    <ShoppingCartContext.Provider value={{ listOfProducts }}>
+    <ShoppingCartContext.Provider value={{ listOfProducts, loading }}>
       {children}
     </ShoppingCartContext.Provider>
   );
