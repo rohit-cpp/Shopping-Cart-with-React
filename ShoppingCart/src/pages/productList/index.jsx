@@ -37,7 +37,7 @@ const ProductListPage = () => {
     <section className="bg-[#EBE8DB] min-h-screen p-7">
       <div className="text-center p-4 border rounded-2xl bg-[#854836]">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-yellow-500">
-          Top Products{" "}
+          Products{" "}
           <span className="underline underline-offset-3 decoration-8 decoration-red-400 dark:decoration-red-600">
             Avalaible for sale
           </span>

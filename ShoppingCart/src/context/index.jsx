@@ -7,6 +7,7 @@ import React from "react";
 const ShoppingCartProvider = ({ children }) => {
   const [listOfProducts, setListOfProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [productDetails, setProductDetails] = useState(null);
 
   async function handelCartApi() {
     try {
@@ -27,7 +28,15 @@ const ShoppingCartProvider = ({ children }) => {
   }, []);
 
   return (
-    <ShoppingCartContext.Provider value={{ listOfProducts, loading }}>
+    <ShoppingCartContext.Provider
+      value={{
+        listOfProducts,
+        loading,
+        setLoading,
+        productDetails,
+        setProductDetails,
+      }}
+    >
       {children}
     </ShoppingCartContext.Provider>
   );
